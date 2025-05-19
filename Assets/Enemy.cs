@@ -3,9 +3,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    protected int amplifier;
-    protected int range;
-    protected int velocity;
+    protected float amplifier;
+    protected float range;
+    protected int health;
+    protected int damage;
+    protected int frequency;
+    protected float speed;
+    private float currentTime;
+    public GameObject enemyBase;
+    public GameObject enemy;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,17 +20,22 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
-        if(!isBaseInRange() || !isEnemyInRange())
+        if(!isBaseInRange() && !isEnemyInRange())
         {
-
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            
         } else if (isBaseInRange())
         {
-
+            attack(enemyBase);
         } else
         {
-
+            attack(enemy);
+        }
+        if(health <= 0)
+        {
+            die();
         }
     }
 
@@ -38,7 +49,17 @@ public class Enemy : MonoBehaviour
         return false;
     }
 
-    virtual public void attack()
+    virtual public void attack(GameObject target)
+    {
+        currentTime += Time.deltaTime;
+        if(currentTime > frequency)
+        {
+            currentTime = 0;
+            
+        }
+    }
+
+    virtual public void die()
     {
 
     }

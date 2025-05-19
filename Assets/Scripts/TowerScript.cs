@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour
 {
+    private int health;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +13,10 @@ public class TowerScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void getDamaged(int amount)
+    {
+        health -= amount;
     }
 }
