@@ -51,12 +51,7 @@ public class Enemy : MonoBehaviour
 
     virtual public void attack(GameObject target)
     {
-        currentTime += Time.deltaTime;
-        if(currentTime > frequency)
-        {
-            currentTime = 0;
-            
-        }
+        
     }
 
     virtual public void die()

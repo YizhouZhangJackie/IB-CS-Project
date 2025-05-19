@@ -19,4 +19,10 @@ public class NormalEnemy : SingleTargetEnemy
     {
         base.Update();
     }
+
+    public override void attack(GameObject target)
+    {
+        //animation
+
+    }
 }
