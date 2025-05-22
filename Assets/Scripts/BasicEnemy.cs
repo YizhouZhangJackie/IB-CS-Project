@@ -11,7 +11,7 @@ public class NormalEnemy : SingleTargetEnemy
         damage = 8;
         frequency = 47;
         speed = 0.5f;
-
+        currentTime = frequency;
     }
 
     // Update is called once per frame
@@ -22,7 +22,12 @@ public class NormalEnemy : SingleTargetEnemy
 
     public override void attack(GameObject target)
     {
+        currentTime += Time.deltaTime;
         //animation
-
+        if (currentTime >= frequency/20)
+        {
+            currentTime = 0;
+            target.GetComponent<TowerScript>().getDamaged(10);
+        }
     }
 }

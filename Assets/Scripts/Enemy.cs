@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     protected int damage;
     protected int frequency;
     protected float speed;
-    private float currentTime;
+    protected float currentTime;
     public GameObject enemyBase;
     public GameObject enemy;
     
@@ -37,6 +37,11 @@ public class Enemy : MonoBehaviour
         {
             die();
         }
+    }
+
+    virtual public void setEnemyBase(GameObject enemybase)
+    {
+        enemyBase = enemybase;
     }
 
     virtual public bool isBaseInRange()
