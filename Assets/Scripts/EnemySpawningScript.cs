@@ -8,29 +8,32 @@ public class EnemySpawningScript : MonoBehaviour
     private int numSpawned;
     private float frequency = 0.5f;
     private float currTime;
+    private int wave;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currTime = 0.5f;
         frequency = 0.5f;
         numEnemies = 20;
-        numSpawned = 0;
+        numSpawned = 100;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void spawnWave(int wave)
-    {
         currTime += Time.deltaTime;
-        if (currTime >= frequency)
+        if (numSpawned < numEnemies && currTime >= frequency)
         {
+            numSpawned++;
             currTime = 0;
             GameObject enemy = Instantiate(basicEnemy, transform.position, transform.rotation);
             enemy.GetComponent<Enemy>().setEnemyBase(tower);
         }
+    }
+
+    public void spawnWave(int wave)
+    {
+        numSpawned = 0;
+        this.wave = wave;
     }
 }
