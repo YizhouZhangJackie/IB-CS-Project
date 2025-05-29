@@ -1,7 +1,9 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemySpawningScript : MonoBehaviour
 {
+    public static List<GameObject> allEnemies = new List<GameObject>();
     [SerializeField] private GameObject basicEnemy;
     [SerializeField] private GameObject tower;
     private int numEnemies;
@@ -28,6 +30,7 @@ public class EnemySpawningScript : MonoBehaviour
             currTime = 0;
             GameObject enemy = Instantiate(basicEnemy, transform.position, transform.rotation);
             enemy.GetComponent<Enemy>().setEnemyBase(tower);
+            allEnemies.Add(enemy);
         }
     }
 

@@ -14,4 +14,11 @@ public class BulletScript : MonoBehaviour
     {
         transform.Translate(Vector2.left * bulletSpeed * Time.deltaTime);
     }
+
+    private void OnTriggerEnter(Collider collission)
+    {
+        Debug.Log("collission");
+        Destroy(collission.gameObject);
+        Destroy(this.gameObject);
+    }
 }
