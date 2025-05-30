@@ -7,7 +7,7 @@ public class NormalEnemy : SingleTargetEnemy
     {
         amplifier = 1;
         range = 1.1f;
-        health = 90;
+        health = 50;
         damage = 8;
         frequency = 47;
         speed = 0.5f;

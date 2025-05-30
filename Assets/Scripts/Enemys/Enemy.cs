@@ -61,6 +61,14 @@ public class Enemy : MonoBehaviour
 
     virtual public void die()
     {
+        Destroy(this.gameObject);
+    }
 
+    private void OnTriggerEnter2D(Collider2D collission)
+    {
+        if (collission.tag == "attack")
+        {
+            //TODO:GameObject.Find("DamageSystem").GetComponent<DamageScript>().attackToDamage; 
+        }
     }
 }

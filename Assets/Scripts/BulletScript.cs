@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour
-{
+{   
     protected int bulletSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,8 +17,9 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collission)
     {
-        Debug.Log("collission");
-        Destroy(collission.gameObject);
-        Destroy(this.gameObject);
+        if(collission.tag == "enemy")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
