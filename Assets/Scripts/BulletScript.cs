@@ -15,7 +15,7 @@ public class BulletScript : MonoBehaviour
         transform.Translate(Vector2.left * bulletSpeed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider collission)
+    private void OnTriggerEnter2D(Collider2D collission)
     {
         Debug.Log("collission");
         Destroy(collission.gameObject);
