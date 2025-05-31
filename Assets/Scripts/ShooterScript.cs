@@ -19,6 +19,6 @@ public class ShooterScript : WeaponScript
 
     public override void attack()
     {
-        Instantiate(bullet, transform.position, transform.rotation);
+        Instantiate(bullet, transform.position + Vector3.up * 0.5f, transform.rotation);
     }
 }

@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
 {
     protected float amplifier;
     protected float range;
-    protected int health;
+    [SerializeField] protected int health;
     protected int damage;
     protected int frequency;
     protected float speed;
@@ -59,16 +59,15 @@ public class Enemy : MonoBehaviour
         
     }
 
+    virtual public void takeDamage(int damageTaken)
+    {
+        health -= damageTaken;
+    }
+
     virtual public void die()
     {
         Destroy(this.gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collission)
-    {
-        if (collission.tag == "attack")
-        {
-            //TODO:GameObject.Find("DamageSystem").GetComponent<DamageScript>().attackToDamage; 
-        }
-    }
+    
 }

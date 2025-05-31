@@ -8,15 +8,15 @@ public class EnemySpawningScript : MonoBehaviour
     [SerializeField] private GameObject tower;
     private int numEnemies;
     private int numSpawned;
-    private float frequency = 0.5f;
+    private float frequency = 1.5f;
     private float currTime;
     private int wave;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currTime = 0.5f;
-        frequency = 0.5f;
-        numEnemies = 20;
+        frequency = 1.5f;
+        currTime = frequency;
+        numEnemies = 10;
         numSpawned = 100;
     }
 

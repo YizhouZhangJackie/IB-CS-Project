@@ -30,4 +30,12 @@ public class NormalEnemy : SingleTargetEnemy
             target.GetComponent<TowerScript>().getDamaged(10);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Attack")
+        {
+            takeDamage(GameObject.Find("DamageSystem").GetComponent<DamageScript>().getAtkDamage(collision.gameObject.name));
+        }
+    }
 }
