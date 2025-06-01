@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9073859152134308216}
   - component: {fileID: 14130981693290166}
   - component: {fileID: 6147363836700194260}
-  - component: {fileID: 599896722759410120}
+  - component: {fileID: 6203594870407638980}
   m_Layer: 0
   m_Name: Basic Enemy
   m_TagString: Enemy
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1815624978843459927, guid: a10e0be7663c57945bcefda21063553b, type: 3}
+  m_Sprite: {fileID: 4705301272047907140, guid: ba1e3f4cbfdcc564aa192f2d2d2a068b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -142,7 +142,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 6.22, y: 10.59}
   m_Direction: 0
---- !u!95 &599896722759410120
+--- !u!95 &6203594870407638980
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

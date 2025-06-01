@@ -16,8 +16,9 @@ public class SingleTargetEnemy : Enemy
 
     public override bool isBaseInRange()
     {
-        if(Mathf.Abs(enemyBase.transform.position.x - transform.position.x) <= range)
+        if(Mathf.Abs(GameObject.Find("ObjectRecorder").GetComponent<ObjectRecorderScript>().smallestX - transform.position.x) <= range)
         {
+            enemy = GameObject.Find("ObjectRecorder").GetComponent<ObjectRecorderScript>().leftMost;
             return true;
         } else
         {

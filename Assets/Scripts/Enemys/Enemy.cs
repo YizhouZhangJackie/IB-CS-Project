@@ -22,13 +22,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
-        if(!isBaseInRange() && !isEnemyInRange())
+        if(!isBaseInRange())
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             
-        } else if (isBaseInRange())
-        {
-            attack(enemyBase);
         } else
         {
             attack(enemy);
