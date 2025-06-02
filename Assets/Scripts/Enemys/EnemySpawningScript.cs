@@ -11,6 +11,7 @@ public class EnemySpawningScript : MonoBehaviour
     private float frequency = 1.5f;
     private float currTime;
     private int wave;
+    [SerializeField] private float rightMostX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +19,7 @@ public class EnemySpawningScript : MonoBehaviour
         currTime = frequency;
         numEnemies = 10;
         numSpawned = 100;
+        rightMostX = -100;
     }
 
     // Update is called once per frame
@@ -31,7 +33,19 @@ public class EnemySpawningScript : MonoBehaviour
             GameObject enemy = Instantiate(basicEnemy, transform.position, transform.rotation);
             enemy.GetComponent<Enemy>().setEnemyBase(tower);
             allEnemies.Add(enemy);
+            for(int i = 0; i < allEnemies.Count; i++)
+            {
+                rightMostX = Mathf.Max(rightMostX, allEnemies[i].transform.position.x);
+            }
         }
+    }
+
+    public void updateRightMost()
+    {
+        for (int i = 0; i < allEnemies.Count; i++)
+        {
+            rightMostX = Mathf.Max(rightMostX, allEnemies[i].transform.position.x);
+        }   
     }
 
     public void spawnWave(int wave)
