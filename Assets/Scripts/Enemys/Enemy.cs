@@ -24,11 +24,17 @@ public class Enemy : MonoBehaviour
     {
         if(!isBaseInRange())
         {
+            currentTime = 100;
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             
         } else
         {
-            attack(enemy);
+            currentTime += Time.deltaTime;
+            if(currentTime >= frequency)
+            {
+                currentTime = 0;
+                attack(enemy);
+            }
         }
         if(health <= 0)
         {

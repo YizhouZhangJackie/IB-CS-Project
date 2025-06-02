@@ -8,7 +8,7 @@ public class NormalEnemy : SingleTargetEnemy
         amplifier = 1;
         range = 1.1f;
         health = 50;
-        damage = 8;
+        damage = 10;
         frequency = 47;
         speed = 0.5f;
         currentTime = frequency;
@@ -22,12 +22,12 @@ public class NormalEnemy : SingleTargetEnemy
 
     public override void attack(GameObject target)
     {
-        currentTime += Time.deltaTime;
-        //animation
-        if (currentTime >= frequency/20)
+        if (target.GetComponent<TowerScript>() != null)
         {
-            currentTime = 0;
             target.GetComponent<TowerScript>().getDamaged(10);
+        } else
+        {
+            GameObject.Find("ObjectRecorder").GetComponent<ObjectRecorderScript>().deductHealth(target, damage);
         }
     }
 
