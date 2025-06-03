@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
 
     virtual public void die()
     {
-        GameObject.Find("EnemySpawnSystem").GetComponent<EnemySpawningScript>().updateRightMost();
+        GameObject.Find("EnemySpawnSystem").GetComponent<EnemySpawningScript>().allEnemies.Remove(this.gameObject);
         Destroy(this.gameObject);
     }
 

@@ -8,6 +8,7 @@ public class ShooterImageScript : MonoBehaviour
     private GameObject temp;
     public Camera mainCamera;
     Vector3 position;
+    [SerializeField] private GameObject enemySpawningSystem;
     void Update()
     {
         if (flag)
@@ -15,6 +16,7 @@ public class ShooterImageScript : MonoBehaviour
             position = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             position.z = 1;
             position.y = -1.37f;
+            position.x = Mathf.Max(enemySpawningSystem.GetComponent<EnemySpawningScript>().rightMostX, position.x);
             temp.transform.position = position;
         }
     }
@@ -28,8 +30,10 @@ public class ShooterImageScript : MonoBehaviour
     {
         flag = false;
 
-        GameObject.Find("PlacingSystem").GetComponent<PlacingScript>().placeStructure(0, temp.transform.position);
-
+        if (GameObject.Find("ShooterImagePrefab(Clone)").GetComponent<placableScript>().flag)
+        {
+            GameObject.Find("PlacingSystem").GetComponent<PlacingScript>().placeStructure(0, temp.transform.position);
+        }
         Destroy(temp);
     }
 }
