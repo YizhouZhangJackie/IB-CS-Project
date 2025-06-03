@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ElectricTower_0: 5814281963621570450
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

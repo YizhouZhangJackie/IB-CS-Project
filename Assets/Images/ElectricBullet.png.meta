@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ElectricBullet_0: 6238956476637653700
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
