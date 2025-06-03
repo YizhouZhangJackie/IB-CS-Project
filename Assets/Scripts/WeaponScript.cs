@@ -14,6 +14,7 @@ public class WeaponScript : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
+        Debug.Log(currTime);
         currTime += Time.deltaTime;
         if (currTime >= atkFreq)
         {

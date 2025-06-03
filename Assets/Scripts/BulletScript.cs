@@ -12,10 +12,10 @@ public class BulletScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         transform.Translate(Vector2.left * bulletSpeed * Time.deltaTime);
-        if(pierce <= 0)
+        if (pierce <= 0 || transform.position.x < -20)
         {
             Destroy(gameObject);
         }
@@ -23,7 +23,10 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collission)
     {
-        pierce--;
+        if (collission.gameObject.tag == "Enemy")
+        {
+            pierce--;
+        }
     }
 
 }

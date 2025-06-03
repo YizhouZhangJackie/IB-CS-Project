@@ -12,6 +12,8 @@ public class DamageScript : MonoBehaviour
         attackToDamage = new Dictionary<string, int>();
         enemyToDamage = new Dictionary<string, int>();
         attackToDamage.Add("Bullet(Clone)", 10);
+        attackToDamage.Add("Laser(Clone)", 25);
+        attackToDamage.Add("ElectricBullet(Clone)", 20);
     }
 
     // Update is called once per frame
