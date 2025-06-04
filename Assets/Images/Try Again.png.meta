@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a94f39dd1a3eefd419dc540c2262e1d3
+guid: 7689c3a9d1d1d244d8c61663a70674ef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5504383117721682252
-    second: fastEnemy2_0
+      213: 3057419904054296746
+    second: Try Again_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fastEnemy2_0
+      name: Try Again_0
       rect:
         serializedVersion: 2
-        x: 329
-        y: 153
-        width: 750
-        height: 332
+        x: 197
+        y: 109
+        width: 1014
+        height: 464
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4beba88c7b08c93b0800000000000000
-      internalID: -5504383117721682252
+      spriteID: aa08d5e24332e6a20800000000000000
+      internalID: 3057419904054296746
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      fastEnemy2_0: -5504383117721682252
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

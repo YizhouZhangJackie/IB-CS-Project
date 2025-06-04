@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TowerScript : MonoBehaviour
@@ -16,7 +17,10 @@ public class TowerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(health <= 0)
+        {
+            SceneManager.LoadSceneAsync("Game Over");
+        }
     }
 
     public void getDamaged(int amount)
