@@ -179,9 +179,10 @@ GameObject:
   - component: {fileID: 95038511}
   - component: {fileID: 95038510}
   - component: {fileID: 95038513}
+  - component: {fileID: 95038514}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,7 +241,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -316,6 +317,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &95038514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95038508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3351900eddbd5924a99ff99037082b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  enemyBase: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!1 &192835320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,7 +1404,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allEnemies: []
   basicEnemy: {fileID: 7150390804340447614, guid: a2105a6a66892b44998e456dc8360292, type: 3}
+  tankEnemy: {fileID: 4954211276603304304, guid: 44b4ca96e329b304590c38d7b88a8aee, type: 3}
+  fastEnemy: {fileID: 3350220455069312357, guid: 4e5464d7b3770db47bb7c5cc0eb70b55, type: 3}
+  bossEnemy: {fileID: 3301172423038729496, guid: a2a590a740b25294998e49d1aa483f0f, type: 3}
   tower: {fileID: 963543505}
+  WaveSystem: {fileID: 1298419892}
   rightMostX: 0
 --- !u!1 &1067942160
 GameObject:
@@ -1748,6 +1768,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnSystem: {fileID: 1006421152}
+  frequency: 0
+  currTime: 0
+  waveNum: 0
 --- !u!1 &1616469168
 GameObject:
   m_ObjectHideFlags: 0

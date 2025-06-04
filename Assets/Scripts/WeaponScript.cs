@@ -14,9 +14,8 @@ public class WeaponScript : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
-        Debug.Log(currTime);
         currTime += Time.deltaTime;
-        if (currTime >= atkFreq)
+        if (currTime >= atkFreq && GameObject.Find("EnemySpawnSystem").GetComponent<EnemySpawningScript>().allEnemies.Count != 0)
         {
             currTime = 0;
             attack();

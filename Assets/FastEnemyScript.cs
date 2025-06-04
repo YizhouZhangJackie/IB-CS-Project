@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class NormalEnemy : SingleTargetEnemy
+public class FastEnemyScript : SingleTargetEnemy
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         amplifier = 1;
         range = 1.1f;
-        health = 50;
-        damage = 10;
+        health = 25;
+        damage = 5;
         frequency = 2;
-        speed = 0.5f;
+        speed = 2f;
         currentTime = frequency;
     }
 
@@ -24,8 +24,9 @@ public class NormalEnemy : SingleTargetEnemy
     {
         if (target.GetComponent<TowerScript>() != null)
         {
-            target.GetComponent<TowerScript>().getDamaged(10);
-        } else
+            target.GetComponent<TowerScript>().getDamaged(damage);
+        }
+        else
         {
             GameObject.Find("ObjectRecorder").GetComponent<ObjectRecorderScript>().deductHealth(target, damage);
         }

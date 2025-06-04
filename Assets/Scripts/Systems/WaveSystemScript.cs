@@ -3,14 +3,14 @@ using UnityEngine;
 public class WaveSystemScript : MonoBehaviour
 {
     [SerializeField] private GameObject enemySpawnSystem;
-    private int frequency;
-    private float currTime;
-    private int waveNum;
+    public int frequency;
+    public float currTime;
+    public int waveNum;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        frequency = 30;
-        currTime = 30;
+        frequency = 45;
+        currTime = 45;
         waveNum = 0;
     }
 
@@ -18,11 +18,16 @@ public class WaveSystemScript : MonoBehaviour
     void Update()
     {
         currTime += Time.deltaTime;
-        if(currTime >= frequency)
+        if(currTime > frequency)
         {
             currTime = 0;
             waveNum++;
             enemySpawnSystem.GetComponent<EnemySpawningScript>().spawnWave(waveNum);
         }
+    }
+
+    public void nextWave()
+    {
+        currTime = frequency - 5;
     }
 }
