@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class ObjectRecorderScript : MonoBehaviour
 {
     [SerializeField] private List<GameObject> allTowers;
-    private static Dictionary<GameObject, int> towerToHealth;
+    public Dictionary<GameObject, float> towerToHealth;
     public GameObject leftMost;
     public float smallestX;
 
@@ -15,11 +15,11 @@ public class ObjectRecorderScript : MonoBehaviour
         allTowers.Add(GameObject.Find("Tower"));
         leftMost = allTowers[0];
         smallestX = allTowers[0].transform.position.x;
-        towerToHealth = new Dictionary<GameObject, int>();
+        towerToHealth = new Dictionary<GameObject, float>();
         towerToHealth.Add(allTowers[0], 100);
     }
 
-    public void addTowers(GameObject tower, int health)
+    public void addTowers(GameObject tower, float health)
     {
         allTowers.Add(tower);
         towerToHealth.Add(tower, health);
@@ -50,7 +50,7 @@ public class ObjectRecorderScript : MonoBehaviour
         }
     }
 
-    public void deductHealth(GameObject tower,int amount)
+    public void deductHealth(GameObject tower,float amount)
     {
         towerToHealth[tower] -= amount;
         if (towerToHealth[tower] <= 0)

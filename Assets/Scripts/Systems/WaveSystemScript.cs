@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveSystemScript : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class WaveSystemScript : MonoBehaviour
             currTime = 0;
             waveNum++;
             enemySpawnSystem.GetComponent<EnemySpawningScript>().spawnWave(waveNum);
+        }
+        if(waveNum == 21)
+        {
+            SceneManager.LoadScene("You Win");
         }
     }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {   
     protected int bulletSpeed;
-    protected int pierce;
+    public int pierce;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

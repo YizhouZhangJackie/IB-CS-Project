@@ -8,6 +8,8 @@ public class WallImageScript : MonoBehaviour
     public Camera mainCamera;
     Vector3 position;
     [SerializeField] private GameObject enemySpawningSystem;
+
+    private int cost = 100;
     void Update()
     {
         if (flag)
@@ -22,6 +24,7 @@ public class WallImageScript : MonoBehaviour
     private void OnMouseDown()
     {
         temp = Instantiate(wallPrefab, mainCamera.ScreenToWorldPoint(Input.mousePosition), transform.rotation);
+        temp.GetComponent<placableScript>().cost = this.cost;
         flag = true;
     }
 

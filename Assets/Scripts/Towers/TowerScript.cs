@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class TowerScript : MonoBehaviour
 {
     private int maxHealth;
-    private int health;
+    private float health;
     [SerializeField] private GameObject slider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +23,7 @@ public class TowerScript : MonoBehaviour
         }
     }
 
-    public void getDamaged(int amount)
+    public void getDamaged(float amount)
     {
         health -= amount;
         slider.GetComponent<HealthBarScript>().updateHealthBar((float)health / maxHealth);

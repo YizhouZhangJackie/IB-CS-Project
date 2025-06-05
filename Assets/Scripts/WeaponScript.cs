@@ -5,6 +5,11 @@ public class WeaponScript : MonoBehaviour
 {
     protected int atkFreq;
     private float currTime;
+
+    protected bool isMouseDown;
+    protected float currTime2;
+    protected resourceSystemScript resourceScript;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

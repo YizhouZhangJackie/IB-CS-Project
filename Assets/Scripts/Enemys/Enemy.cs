@@ -5,18 +5,22 @@ public class Enemy : MonoBehaviour
 {
     protected float amplifier;
     protected float range;
-    [SerializeField] protected int health;
-    protected int damage;
+    [SerializeField] protected float health;
+    protected float damage;
     protected int frequency;
     protected float speed;
     protected float currentTime;
     public GameObject enemyBase;
     public GameObject enemy;
+    [SerializeField] private WaveSystemScript waveSystem;
+    [SerializeField] protected resourceSystemScript resourceSystem;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected void Start()
     {
-        
+        waveSystem = GameObject.Find("WaveSystem").GetComponent<WaveSystemScript>();
+        resourceSystem = GameObject.Find("ResourceSystem").GetComponent<resourceSystemScript>();
+        amplifier = waveSystem.waveNum / 7f + 1;
     }
 
     // Update is called once per frame

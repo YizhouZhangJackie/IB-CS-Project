@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5a01743db59830d4ba92d7ec3fca83da
+guid: 42562b3e2e51acf41a8e66ca93406a61
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8557816031639189491
-    second: Game Over_0
+      213: 527953631270165849
+    second: backButton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game Over_0
+      name: backButton_0
       rect:
         serializedVersion: 2
-        x: 153
-        y: 175
-        width: 1234
-        height: 442
+        x: 197
+        y: 109
+        width: 1014
+        height: 464
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d08c00519a78c3980800000000000000
-      internalID: -8557816031639189491
+      spriteID: 95d5cb9c70ba35700800000000000000
+      internalID: 527953631270165849
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Game Over_0: -8557816031639189491
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -9,6 +9,8 @@ public class ShooterImageScript : MonoBehaviour
     public Camera mainCamera;
     Vector3 position;
     [SerializeField] private GameObject enemySpawningSystem;
+
+    private int cost = 200;
     void Update()
     {
         if (flag)
@@ -23,6 +25,7 @@ public class ShooterImageScript : MonoBehaviour
     private void OnMouseDown()
     {
         temp = Instantiate(shooterPrefab, mainCamera.ScreenToWorldPoint(Input.mousePosition), transform.rotation);
+        temp.GetComponent<placableScript>().cost = this.cost;
         flag = true;
     }
 

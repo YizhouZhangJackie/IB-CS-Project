@@ -8,6 +8,8 @@ public class ElectricTowerImageScript : MonoBehaviour
     public Camera mainCamera;
     Vector3 position;
     [SerializeField] private GameObject enemySpawningSystem;
+
+    private int cost = 500;
     void Update()
     {
         if (flag)
@@ -22,6 +24,7 @@ public class ElectricTowerImageScript : MonoBehaviour
     private void OnMouseDown()
     {
         temp = Instantiate(electricTowerPrefab, mainCamera.ScreenToWorldPoint(Input.mousePosition), transform.rotation);
+        temp.GetComponent<placableScript>().cost = this.cost;
         flag = true;
     }
 

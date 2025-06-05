@@ -14,4 +14,9 @@ public class ElectricBulletScript : BulletScript
     {
         base.Update();
     }
+
+    public void setPierce(int pierce)
+    {
+        this.pierce = pierce;
+    }
 }

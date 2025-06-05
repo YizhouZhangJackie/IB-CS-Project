@@ -3,14 +3,14 @@ using UnityEngine;
 public class NormalEnemy : SingleTargetEnemy
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    new void Start()
     {
-        amplifier = 1;
+        base.Start();
         range = 1.1f;
-        health = 50;
-        damage = 10;
+        health = 50 * amplifier;
+        damage = 10 * amplifier;
         frequency = 2;
-        speed = 0.5f;
+        speed = 0.5f * amplifier;
         currentTime = frequency;
     }
 
@@ -37,5 +37,11 @@ public class NormalEnemy : SingleTargetEnemy
         {
             takeDamage(GameObject.Find("DamageSystem").GetComponent<DamageScript>().getAtkDamage(collision.gameObject.name));
         }
+    }
+
+    public override void die()
+    {
+        resourceSystem.coinAmount += 20;
+        base.die();
     }
 }

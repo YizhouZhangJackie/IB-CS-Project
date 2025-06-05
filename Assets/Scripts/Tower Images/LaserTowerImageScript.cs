@@ -8,6 +8,8 @@ public class LaserTowerImageScript : MonoBehaviour
     public Camera mainCamera;
     Vector3 position;
     [SerializeField] private GameObject enemySpawningSystem;
+
+    private int cost = 500;
     void Update()
     {
         if (flag)
@@ -22,6 +24,7 @@ public class LaserTowerImageScript : MonoBehaviour
     private void OnMouseDown()
     {
         temp = Instantiate(laserTowerPrefab, mainCamera.ScreenToWorldPoint(Input.mousePosition), transform.rotation);
+        temp.GetComponent<placableScript>().cost = this.cost;
         flag = true;
     }
 

@@ -3,14 +3,14 @@ using UnityEngine;
 public class BossEnemyScript : SingleTargetEnemy
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    new void Start()
     {
-        amplifier = 1;
+        base.Start();
         range = 1.1f;
-        health = 500;
-        damage = 20;
+        health = 500 * amplifier;
+        damage = 20 * amplifier;
         frequency = 2;
-        speed = 0.25f;
+        speed = 0.25f * amplifier;
         currentTime = frequency;
     }
 
@@ -38,5 +38,11 @@ public class BossEnemyScript : SingleTargetEnemy
         {
             takeDamage(GameObject.Find("DamageSystem").GetComponent<DamageScript>().getAtkDamage(collision.gameObject.name));
         }
+    }
+
+    public override void die()
+    {
+        resourceSystem.coinAmount += 400;
+        base.die();
     }
 }

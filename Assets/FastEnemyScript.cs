@@ -3,14 +3,14 @@ using UnityEngine;
 public class FastEnemyScript : SingleTargetEnemy
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    new void Start()
     {
-        amplifier = 1;
+        base.Start();
         range = 1.1f;
-        health = 25;
-        damage = 5;
+        health = 25 * amplifier;
+        damage = 5 * amplifier;
         frequency = 2;
-        speed = 2f;
+        speed = 2f * amplifier;
         currentTime = frequency;
     }
 
@@ -38,5 +38,11 @@ public class FastEnemyScript : SingleTargetEnemy
         {
             takeDamage(GameObject.Find("DamageSystem").GetComponent<DamageScript>().getAtkDamage(collision.gameObject.name));
         }
+    }
+
+    public override void die()
+    {
+        resourceSystem.coinAmount += 20;
+        base.die();
     }
 }
