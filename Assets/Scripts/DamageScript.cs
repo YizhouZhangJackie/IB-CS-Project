@@ -11,8 +11,8 @@ public class DamageScript : MonoBehaviour
     {
         attackToDamage = new Dictionary<string, int>();
         enemyToDamage = new Dictionary<string, int>();
-        attackToDamage.Add("Bullet(Clone)", 20);
-        attackToDamage.Add("Laser(Clone)", 10);
+        attackToDamage.Add("Bullet(Clone)", 40);
+        attackToDamage.Add("Laser(Clone)", 20);
         attackToDamage.Add("ElectricBullet(Clone)", 25);
     }
 

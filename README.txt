@@ -1,0 +1,10 @@
+To run the game, double click the IB CS Unity Project.exe file in this folder. Here are some specifications and explanations for the game.
+
+This game is made in Unity and designed around a 1920 x 1080 (or 1080p) resolution / screen size. The game should still work as intended for other resolutions and aspect ratios, however, objects, especially UI elements may be offsetted or stretched. The game should still function correctly, but you would need to click on the offsetted/stretched UI elements in the top menu in order to interact and place towers since I did not have time to implement calculations for other screen resolutions.
+
+The game itself consists of 20 waves of enemies. The wave number and coins (currency) of the player is displayed in the box at the top right. Coins is passively generated while the game is running and is also awarded upon killing an enemy. Coins can be used to buy and upgrade towers. To place a tower, left click and drag the icon of the tower you wish to place from the top left of the screen. The dragged tower will turn red if there isn't enough coins or if it overlaps with an existing tower, and will successfully place if you release the mouse while it is not red. Each tower has two available upgrades, to check the next upgrade, click a already placed down tower, and the specifications and cost of the next upgrade will appear in the second box to the top right. To upgrade the tower, hold left click on the placed tower for three seconds while having enough coins for the upgrade, the current stage of the tower can be distinguished by the color scheme Grey(base tier) -> Blue -> Gold(highest tier).
+
+I hope you enjoy this game!
+
+Note: The "Options" option in the main menu is blank since there is no available options as of this version.
+Also Note: Please excuse the art quality as all assets are hand drawn in this game.
